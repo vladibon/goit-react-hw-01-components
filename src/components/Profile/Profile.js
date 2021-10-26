@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import UserDescr from '../UserDescr/UserDescr';
-import Stats from '../Stats/Stats';
+import UserStats from '../UserStats/UserStats';
 
 function Profile({
   user: {
@@ -14,7 +14,7 @@ function Profile({
   return (
     <div className="profile">
       <UserDescr name={name} tag={tag} location={location} profileUrl={avatar} />
-      <Stats followers={followers} views={views} likes={likes} />
+      <UserStats followers={followers} views={views} likes={likes} />
     </div>
   );
 }
