@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import UserDescr from '../UserDescr/UserDescr';
-import UserStats from '../UserStats/UserStats';
+import ProfileDescr from '../ProfileDescr/ProfileDescr';
+import ProfileStats from '../ProfileStats/ProfileStats';
 
 function Profile({
   user: {
@@ -13,15 +13,15 @@ function Profile({
 }) {
   return (
     <div className="profile">
-      <UserDescr name={name} tag={tag} location={location} profileUrl={avatar} />
-      <UserStats followers={followers} views={views} likes={likes} />
+      <ProfileDescr name={name} tag={tag} location={location} profileUrl={avatar} />
+      <ProfileStats followers={followers} views={views} likes={likes} />
     </div>
   );
 }
 
 Profile.propTypes = {
   user: PropTypes.shape({
-    stats: PropTypes.shape({}).isRequired,
+    stats: PropTypes.object.isRequired,
   }).isRequired,
 };
 

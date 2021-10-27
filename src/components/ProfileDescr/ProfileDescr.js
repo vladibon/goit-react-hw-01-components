@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
-function UserDescr({ name, tag, location, profileUrl }) {
+function ProfileDescr({ name, tag, location, profileUrl }) {
   return (
     <div className="description">
-      <img className="avatar" src={profileUrl} alt="Аватар пользователя" />
+      <img className="avatar" src={profileUrl} alt="User avatar" />
       <p className="name">{name}</p>
       <p className="tag">@{tag}</p>
       <p className="location">{location}</p>
@@ -11,11 +11,11 @@ function UserDescr({ name, tag, location, profileUrl }) {
   );
 }
 
-UserDescr.propTypes = {
+ProfileDescr.propTypes = {
   name: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   profileUrl: PropTypes.string.isRequired,
 };
 
-export default UserDescr;
+export default ProfileDescr;
