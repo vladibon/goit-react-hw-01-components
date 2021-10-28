@@ -1,28 +1,45 @@
 import PropTypes from 'prop-types';
-import ProfileDescr from '../ProfileDescr/ProfileDescr';
-import ProfileStats from '../ProfileStats/ProfileStats';
 
 function Profile({
-  user: {
-    name,
-    tag,
-    location,
-    avatar,
-    stats: { followers, views, likes },
-  },
+  name,
+  tag,
+  location,
+  profileUrl,
+  stats: { followers, views, likes },
 }) {
   return (
     <div className="profile">
-      <ProfileDescr name={name} tag={tag} location={location} profileUrl={avatar} />
-      <ProfileStats followers={followers} views={views} likes={likes} />
+      <div className="description">
+        <img className="avatar" src={profileUrl} alt={`${name} avatar`} />
+        <p className="name">{name}</p>
+        <p className="tag">@{tag}</p>
+        <p className="location">{location}</p>
+      </div>
+
+      <ul className="stats">
+        <li>
+          <span className="label">Followers</span>
+          <span className="quantity">{followers}</span>
+        </li>
+        <li>
+          <span className="label">Views</span>
+          <span className="quantity">{views}</span>
+        </li>
+        <li>
+          <span className="label">Likes</span>
+          <span className="quantity">{likes}</span>
+        </li>
+      </ul>
     </div>
   );
 }
 
 Profile.propTypes = {
-  user: PropTypes.shape({
-    stats: PropTypes.object.isRequired,
-  }).isRequired,
+  name: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  profileUrl: PropTypes.string.isRequired,
+  stats: PropTypes.objectOf(PropTypes.number.isRequired).isRequired,
 };
 
 export default Profile;
