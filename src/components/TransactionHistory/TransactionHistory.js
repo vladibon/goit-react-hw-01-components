@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-function TransactionHistory({ items }) {
+function TransactionHistory({ transactions }) {
   return (
     <table className="transaction-history">
       <thead>
@@ -12,7 +12,7 @@ function TransactionHistory({ items }) {
       </thead>
 
       <tbody>
-        {items.map(({ id, type, amount, currency }) => (
+        {transactions.map(({ id, type, amount, currency }) => (
           <tr key={id}>
             <td>{type}</td>
             <td>{amount}</td>
@@ -25,8 +25,9 @@ function TransactionHistory({ items }) {
 }
 
 TransactionHistory.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string.isRequired).isRequired)
-    .isRequired,
+  transactions: PropTypes.arrayOf(
+    PropTypes.objectOf(PropTypes.string.isRequired).isRequired,
+  ).isRequired,
 };
 
 export default TransactionHistory;
