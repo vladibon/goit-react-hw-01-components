@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export const TransactionHistory = ({ transactions }) => {
+function TransactionHistory({ transactions }) {
   return (
     <table className='transaction-history'>
       <thead>
@@ -22,10 +22,12 @@ export const TransactionHistory = ({ transactions }) => {
       </tbody>
     </table>
   );
-};
+}
 
 TransactionHistory.propTypes = {
   transactions: PropTypes.arrayOf(
     PropTypes.objectOf(PropTypes.string.isRequired).isRequired,
   ).isRequired,
 };
+
+export default TransactionHistory;
