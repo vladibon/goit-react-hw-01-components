@@ -15,7 +15,7 @@ function Profile({
           className={s.avatar}
           src={profileUrl}
           alt={`${name} avatar`}
-          width='320'
+          width='180'
         />
         <p className={s.name}>{name}</p>
         <p className={s.tag}>@{tag}</p>
