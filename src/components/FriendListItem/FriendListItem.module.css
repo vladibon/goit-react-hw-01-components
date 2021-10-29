@@ -2,9 +2,18 @@
   display: flex;
   align-items: center;
   width: 210px;
+  margin: 10px;
   padding: 20px;
   border-radius: 6px;
   box-shadow: var(--card-shadow);
+
+  transform: translateY(0);
+  transition: transform var(--animation);
+}
+
+.item:hover,
+.item:focus {
+  transform: translateY(-4px);
 }
 
 .status {
