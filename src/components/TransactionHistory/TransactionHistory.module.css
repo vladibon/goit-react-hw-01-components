@@ -1,0 +1,27 @@
+.transactions {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  box-shadow: var(--card-shadow);
+}
+
+.thead {
+  font-size: 20px;
+  color: #fff;
+  background-color: tomato;
+}
+
+tr:nth-child(2n) {
+  background-color: #efefef;
+}
+
+.tbody tr:hover {
+  background-color: beige;
+}
+
+th,
+td {
+  width: calc(100% / 3);
+  height: 40px;
+  border: 1px solid #f9f9f9;
+}
