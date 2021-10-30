@@ -38,7 +38,7 @@
 
 .stats {
   display: flex;
-  background-color: #eee;
+  background-color: var(--profile-stats-bg-color);
 }
 
 .item {
@@ -46,11 +46,11 @@
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--profile-stats-border-color);
 }
 
 .item:not(:last-child) {
-  border-right: 1px solid #ccc;
+  border-right: 1px solid var(--profile-stats-border-color);
 }
 
 .label {

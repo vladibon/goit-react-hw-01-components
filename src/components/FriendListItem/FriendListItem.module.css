@@ -19,43 +19,35 @@
 
 .online {
   composes: status;
-  background-color: var(--online-color);
-}
-
-.online::before {
-  content: 'Online';
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: #212121;
-  pointer-events: none;
-  opacity: 0;
-  transform: translateY(-24px);
-  transition: transform var(--animation), opacity var(--animation);
-}
-
-.item:hover .online::before {
-  opacity: 1;
-  transform: translateY(0);
+  background-color: var(--online-status-color);
 }
 
 .offline {
   composes: status;
-  background-color: var(--offline-color);
+  background-color: var(--offline-status-color);
 }
 
+.online::before,
 .offline::before {
-  content: 'Offline';
   position: absolute;
   top: 10px;
   left: 10px;
-  color: #212121;
+  color: var(--text-color);
   pointer-events: none;
   opacity: 0;
   transform: translateY(-24px);
   transition: transform var(--animation), opacity var(--animation);
 }
 
+.online::before {
+  content: 'Online';
+}
+
+.offline::before {
+  content: 'Offline';
+}
+
+.item:hover .online::before,
 .item:hover .offline::before {
   opacity: 1;
   transform: translateY(0);

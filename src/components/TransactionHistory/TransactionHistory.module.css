@@ -7,21 +7,21 @@
 
 .thead {
   font-size: 20px;
-  color: #fff;
-  background-color: tomato;
+  color: var(--white-text-color);
+  background-color: var(--thead-bg-color);
 }
 
 tr:nth-child(2n) {
-  background-color: #efefef;
+  background-color: var(--trow-bg-color);
 }
 
 .tbody tr:hover {
-  background-color: beige;
+  background-color: var(--trow-accent-bg-color);
 }
 
 th,
 td {
   width: calc(100% / 3);
   height: 40px;
-  border: 1px solid #f9f9f9;
+  border: 1px solid var(--table-border-color);
 }
