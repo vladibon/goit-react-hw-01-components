@@ -1,4 +1,5 @@
 .item {
+  position: relative;
   display: flex;
   align-items: center;
   width: 210px;
@@ -6,14 +7,6 @@
   padding: 20px;
   border-radius: 6px;
   box-shadow: var(--card-shadow);
-
-  transform: translateY(0);
-  transition: transform var(--animation);
-}
-
-.item:hover,
-.item:focus {
-  transform: translateY(-4px);
 }
 
 .status {
@@ -29,9 +22,43 @@
   background-color: var(--online-color);
 }
 
+.online::before {
+  content: 'Online';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #212121;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-24px);
+  transition: transform var(--animation), opacity var(--animation);
+}
+
+.item:hover .online::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .offline {
   composes: status;
   background-color: var(--offline-color);
+}
+
+.offline::before {
+  content: 'Offline';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #212121;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-24px);
+  transition: transform var(--animation), opacity var(--animation);
+}
+
+.item:hover .offline::before {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .avatar {
