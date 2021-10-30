@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import s from './FriendListItem.module.css';
+import defaultAvatar from './default-avatar.svg';
 
 function FriendListItem({ avatar, name, isOnline }) {
   return (
@@ -15,6 +16,11 @@ function FriendListItem({ avatar, name, isOnline }) {
     </li>
   );
 }
+
+FriendListItem.defaultProps = {
+  name: 'Friend',
+  avatar: defaultAvatar,
+};
 
 FriendListItem.propTypes = {
   avatar: PropTypes.string.isRequired,

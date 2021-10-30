@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import s from './Profile.module.css';
+import defaultAvatar from './default-avatar.svg';
 
 function Profile({
   name,
@@ -39,6 +40,11 @@ function Profile({
     </div>
   );
 }
+
+Profile.defaultProps = {
+  name: 'User',
+  profileUrl: defaultAvatar,
+};
 
 Profile.propTypes = {
   name: PropTypes.string.isRequired,
